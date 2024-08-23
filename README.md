@@ -103,11 +103,10 @@ The system architecture involves several key components:
    - **Mount the PCB into the Enclosure**:
      - Carefully place the assembled PCB with connected sensors into the 3D-printed enclosure.
    - **Power Connections**:
-     - Connect the solar panel and battery to the PCB to power the system.
+     - Connect the solar panel and battery to the ATmega2560+ESP8266 to power the system.
      - Double-check all connections to ensure they are secure.
    - **Seal the Enclosure**:
      - Make sure the enclosure is properly sealed to protect the internal components from environmental factors.
-
 
 6. **Power On the System**:
    - Once assembled, power on the sensor box by ensuring the solar panel and battery are connected.
