@@ -56,11 +56,16 @@ The system architecture involves several key components:
    - Install the solar panel and battery to power the system.
 
 2. **Software Installation**:
+   -Install necessary libraries for the Arduino IDE:
+bme68xLibrary.h
+DFRobot_MICS.h
+PMS.h
+MQ131.h
    - Program the ATmega2560 and ESP8266 using Arduino IDE.
    - Set up Firebase and configure real-time database rules.
    - Deploy the web interface using Firebase Hosting.
 
-3. **Configuration**:
+4. **Configuration**:
    - Modify the Firebase API keys and database URLs in the Arduino code.
    - Test the system for stable data transmission and sensor accuracy.
 
