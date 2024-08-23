@@ -78,8 +78,8 @@ The system architecture involves several key components:
 
 1. **Create the PCB Board**:
    - Download the [ATmega2560 PCB Board.zip](./ATmega2560%20PCB%20Board.zip) file.
-   - Unzip the file and use the provided Gerber files to fabricate the PCB board. You can upload these files to a PCB manufacturer of your choice (e.g., JLCPCB, PCBWay).
-   - Once the PCB is fabricated, solder the components as per the provided schematic in the ZIP file.
+   - Unzip the file and directly upload the Gerber files to a PCB manufacturer's website (e.g., JLCPCB, PCBWay) through their online ordering system.
+   - Once the PCB is fabricated, solder the components according to the provided schematic included in the ZIP file.
 
 2. **3D Print the Enclosure**:
    - Navigate to the [3D model](./3D%20model) folder.
