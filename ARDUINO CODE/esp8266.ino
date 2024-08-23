@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266Firebase.h>
-#include <ArduinoJson.h>  // 包含ArduinoJson库
+#include <ArduinoJson.h>  // Include ArduinoJson library
 
 #define _SSID "Your WiFi SSID" // Your WiFi SSID
 #define _PASSWORD "Your WiFi Password" // Your WiFi Password
@@ -23,7 +23,7 @@ void loop() {
     if (Serial.available()) {
         String jsonData = Serial.readStringUntil('\n');
         
-        // 解析JSON数据
+        // Parse the JSON data
         StaticJsonDocument<1024> doc;
         DeserializationError error = deserializeJson(doc, jsonData);
         if (error) {
@@ -32,13 +32,13 @@ void loop() {
             return;
         }
         
-        // 遍历JSON对象中的每个键值对
+        // Iterate through each key-value pair in the JSON object
         for (JsonPair kv : doc.as<JsonObject>()) {
             String key = kv.key().c_str();
             String value = kv.value().as<String>();
             String firebasePath = "sensorData/" + key;
 
-            // 上传每个键值对到Firebase
+            // Upload each key-value pair to Firebase
             firebase.setString(firebasePath.c_str(), value.c_str());
             Serial.println("Data set to Firebase: " + firebasePath + " = " + value);
         }
