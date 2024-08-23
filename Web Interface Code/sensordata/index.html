@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMonitor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #8faadc;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 30px;
+            width: 100%;
+            max-width: 1400px;
+        }
+        .sensor-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 150px;
+            text-align: center;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+        }
+        svg {
+            margin-bottom: 10px;
+        }
+        .legend {
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>EcoMonitor</h1>
+    <div class="container" id="sensorDataContainer"></div>
+    <div class="legend">
+        <p>Indicator ranges and pointer logic:</p>
+        <p>If value &le; safe, the pointer is in the green area.</p>
+        <p>If value &gt; safe and &le; moderate, the pointer is in the yellow area.</p>
+        <p>If value &gt; moderate and &lt; dangerous, the pointer is in the red area.</p>
+        <p>If value &ge; dangerous, the pointer is at the end of the red area.</p>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY_HERE",
+            authDomain: "YOUR_AUTH_DOMAIN_HERE",
+            databaseURL: "YOUR_DATABASE_URL_HERE",
+            projectId: "YOUR_PROJECT_ID_HERE",
+            storageBucket: "YOUR_STORAGE_BUCKET_HERE",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID_HERE",
+            appId: "YOUR_APP_ID_HERE",
+            measurementId: "YOUR_MEASUREMENT_ID_HERE"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const dataRef = ref(database, 'sensorData');
+
+        onValue(dataRef, (snapshot) => {
+            const data = snapshot.val();
+            updateSensorData(data);
+        });
+
+        function updateSensorData(data) {
+            const container = document.getElementById('sensorDataContainer');
+            container.innerHTML = ''; // Clear previous content
+            Object.keys(data).forEach(key => {
+                const value = data[key];
+                const unit = getUnit(key);
+                const pointerPosition = calculatePointerPosition(value, key);
+                container.innerHTML += `
+                <div class="sensor-item">
+                    <svg width="100" height="20" viewBox="0 0 100 20">
+                        <rect width="33" height="20" fill="green"></rect>
+                        <rect width="33" height="20" x="33" fill="yellow"></rect>
+                        <rect width="34" height="20" x="66" fill="red"></rect>
+                        <polygon points="${pointerPosition},0 ${pointerPosition-5},20 ${pointerPosition+5},20" fill="black"/>
+                    </svg>
+                    <p>${key}: ${value} ${unit}</p>
+                </div>`;
+            });
+        }
+
+        function getUnit(key) {
+            const units = {
+                "CO": "V",
+                "GasResistance": "Ohm",
+                "Humidity": "%",
+                "NO2": "ppm",
+                "O3": "ppm",
+                "PM1_0": "ug/m³",
+                "PM2_5": "ug/m³",
+                "PM10_0": "ug/m³",
+                "Pressure": "Pa",
+                "Temperature": "℃",
+                "VOC": "mg/m³" // Updated unit for VOC
+            };
+            return units[key] || '';
+        }
+
+        function calculatePointerPosition(value, key) {
+            // Define ranges based on the provided standards
+            const ranges = {
+                "CO": { safe: 4, moderate: 9, dangerous: Infinity },
+                "NO2": { safe: 40, moderate: 100, dangerous: Infinity },
+                "O3": { safe: 100, moderate: 180, dangerous: Infinity },
+                "PM1_0": { safe: 25, moderate: 50, dangerous: Infinity },
+                "PM2_5": { safe: 25, moderate: 50, dangerous: Infinity },
+                "PM10_0": { safe: 50, moderate: 100, dangerous: Infinity },
+                "VOC": { safe: 0.6, moderate: 1.0, dangerous: Infinity },
+                "Humidity": { safe: 50, moderate: 70, dangerous: Infinity }
+                // Note: Pressure does not have a pollution-related range
+            };
+            const range = ranges[key];
+            if (!range) return 16.5; // Default to start of green zone if no range defined
+
+            // Adjust position within the bar based on ranges and value
+            if (value <= range.safe) return 16.5; // Green zone
+            else if (value <= range.moderate) return 50; // Yellow zone
+            else if (value < range.dangerous) return 83.5; // Red zone
+            return 100; // Beyond red, assume maximum
+        }
+    </script>
+</body>
+</html>
