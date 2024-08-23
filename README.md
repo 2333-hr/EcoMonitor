@@ -33,7 +33,7 @@ The system architecture involves several key components:
 
 ## Hardware Components
 - **PMS7003**: Particulate Matter Sensor (PM1, PM2.5, PM10)
- <img width="175" alt="image" src="https://github.com/user-attachments/assets/b30c2d42-0589-4405-88ff-379d8ae266f9">
+ - <img width="175" alt="image" src="https://github.com/user-attachments/assets/b30c2d42-0589-4405-88ff-379d8ae266f9">
 - **MQ131**: Ozone Sensor (O3)
 - <img width="131" alt="image" src="https://github.com/user-attachments/assets/ca9790b7-b8f9-4277-9eb2-b329aaf20bf5">
 - **WaveShare BME688**: Measures temperature, humidity, gas resistance, and atmospheric pressure
