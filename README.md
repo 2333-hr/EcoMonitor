@@ -103,7 +103,7 @@ Ensure that you have the correct Firebase API keys and database URLs configured 
    - Go to the [Web Interface Code](./Web%20Interface%20Code) folder.
    - Deploy the web interface using Firebase.
 ### Example of a web page
-![95d8e6108d425437d1d075c464de21d](https://github.com/user-attachments/assets/484394bb-8e53-4f82-8ec9-f3e7c9187c13)
+![image](https://github.com/user-attachments/assets/0a1c2815-4617-444a-ae1c-da3cbbf74210)
 
 5. **Assemble the Sensor Box**:
    - **Connect the Sensors and Main Control Board**:
