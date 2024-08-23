@@ -66,17 +66,44 @@ The system architecture involves several key components:
    - Test the system for stable data transmission and sensor accuracy.
 
 ## How to Use
-1. **Run Arduino Code**: 
+
+1. **Create the PCB Board**:
+   - Download the [ATmega2560 PCB Board.zip](./ATmega2560%20PCB%20Board.zip) file.
+   - Unzip the file and use the provided Gerber files to fabricate the PCB board. You can upload these files to a PCB manufacturer of your choice (e.g., JLCPCB, PCBWay).
+   - Once the PCB is fabricated, solder the components as per the provided schematic in the ZIP file.
+
+2. **3D Print the Enclosure**:
+   - Navigate to the [3D model](./3D%20model) folder.
+   - Use the provided STL files to 3D print the enclosure. Ensure that the material used for printing (such as PETG) is suitable for outdoor conditions.
+   - After printing, assemble the enclosure, ensuring all components fit securely.
+
+3. **Run Arduino Code**: 
    - Navigate to the [ARDUINO CODE](./ARDUINO%20CODE) folder.
    - Open the `.ino` file in Arduino IDE.
    - Upload the code to the ATmega2560 + ESP8266 board.
-2. **Set Up the Web Interface**:
+
+4. **Set Up the Web Interface**:
    - Go to the [Web Interface Code](./Web%20Interface%20Code) folder.
-   - Follow the instructions in the README file in that folder to deploy the web interface using Firebase.
-3. Power on the sensor box by ensuring the solar panel and battery are connected.
-4. The sensor box will begin collecting and transmitting data to Firebase.
-5. Scan the QR code (included in the repository) to access the web interface.
-6. Monitor real-time air quality data, displayed in an easy-to-read format.
+   - Deploy the web interface using Firebase.
+
+5. **Assemble the Sensor Box**:
+   - Mount the sensors onto the PCB board.
+   - Place the PCB inside the 3D-printed enclosure.
+   - Connect the solar panel and battery to power the system.
+   - Ensure all connections are secure and that the enclosure is properly sealed for outdoor use.
+
+6. **Power On the System**:
+   - Once assembled, power on the sensor box by ensuring the solar panel and battery are connected.
+
+7. **Begin Data Collection**:
+   - The sensor box will start collecting and transmitting data to Firebase automatically.
+
+8. **Access the Web Interface**:
+   - Scan the QR code (included in the [QR code](./QR%20code) folder) to access the web interface.
+   - Monitor real-time air quality data, which will be displayed in an easy-to-read format.
+
+By following these steps, you'll be able to build, deploy, and use the EcoMonitor system to monitor air quality in your chosen locations.
+
 
 ## Results and Analysis
 - The system was deployed in various locations within East London, including Elizabeth Olympic Park.
