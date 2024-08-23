@@ -3,6 +3,8 @@
 ## Overview
 EcoMonitor is a real-time air quality monitoring system developed to assess and visualize air quality data in urban environments. The system utilizes IoT-based sensor networks to monitor various air pollutants, such as PM2.5, PM10, CO, NO<sub>2</sub>, O<sub>3</sub>, VOCs, and other environmental parameters like temperature, humidity, and atmospheric pressure. The collected data is transmitted to Firebase in real-time and made accessible through a user-friendly web interface.
 
+![95d8e6108d425437d1d075c464de21d](https://github.com/user-attachments/assets/b618707c-e5eb-4de0-a4cf-bb19fe49801f)
+
 ## Table of Contents
 1. [Project Description](#project-description)
 2. [Features](#features)
@@ -57,6 +59,11 @@ The system architecture involves several key components:
 - **HTML/CSS/JavaScript**: For developing the web interface.
 - **JSON**: Data format used for transmitting sensor data to Firebase.
 
+### Firebase Setup
+To deploy the web interface and set up Firebase for real-time data storage, please follow the official [Firebase documentation](https://firebase.google.com/docs). The documentation provides step-by-step guidance on how to create a Firebase project, configure real-time databases, and deploy web applications using Firebase Hosting. 
+
+Ensure that you have the correct Firebase API keys and database URLs configured in your project settings.
+
 ## Installation and Setup
 1. **Hardware Setup**:
    - Assemble the sensor components on the custom PCB.
@@ -95,6 +102,8 @@ The system architecture involves several key components:
 4. **Set Up the Web Interface**:
    - Go to the [Web Interface Code](./Web%20Interface%20Code) folder.
    - Deploy the web interface using Firebase.
+### Example of a web page
+![95d8e6108d425437d1d075c464de21d](https://github.com/user-attachments/assets/484394bb-8e53-4f82-8ec9-f3e7c9187c13)
 
 5. **Assemble the Sensor Box**:
    - **Connect the Sensors and Main Control Board**:
