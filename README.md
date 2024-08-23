@@ -120,7 +120,6 @@ The system architecture involves several key components:
 
 By following these steps, you'll be able to build, deploy, and use the EcoMonitor system to monitor air quality in your chosen locations.
 
-
 ## Results and Analysis
 - The system was deployed in various locations within East London, including Elizabeth Olympic Park.
 - Results indicate consistently low pollutant levels, suggesting good air quality in these areas.
@@ -138,3 +137,6 @@ By following these steps, you'll be able to build, deploy, and use the EcoMonito
 
 ## License
 No license is associated with this project. Please contact the author for any questions regarding usage.
+
+## Contact
+For any questions or inquiries, please contact ucfnhy0@ucl.ac.uk
