@@ -1,7 +1,7 @@
 # EcoMonitor: Real-Time Outdoor Air Quality Monitoring Using IoT-Based Sensor Networks in Urban Environments
 
 ## Overview
-EcoMonitor is a real-time air quality monitoring system developed to assess and visualize air quality data in urban environments. The system utilizes IoT-based sensor networks to monitor various air pollutants, such as PM2.5, PM10, CO, NO<sub>2<sub>, O<sub>3<sub>, VOCs, and other environmental parameters like temperature, humidity, and atmospheric pressure. The collected data is transmitted to Firebase in real-time and made accessible through a user-friendly web interface.
+EcoMonitor is a real-time air quality monitoring system developed to assess and visualize air quality data in urban environments. The system utilizes IoT-based sensor networks to monitor various air pollutants, such as PM2.5, PM10, CO, NO<sub>2</sub>, O<sub>3</sub>, VOCs, and other environmental parameters like temperature, humidity, and atmospheric pressure. The collected data is transmitted to Firebase in real-time and made accessible through a user-friendly web interface.
 
 ## Table of Contents
 1. [Project Description](#project-description)
@@ -20,7 +20,7 @@ EcoMonitor is a real-time air quality monitoring system developed to assess and 
 EcoMonitor was developed to fill the gap in real-time air quality monitoring, especially in urban parks and residential areas with low traffic, where traditional monitoring systems may not be as effective. This project is particularly focused on collecting accurate air quality data, processing it in real-time, and providing users with immediate access through a web interface.
 
 ## Features
-- **Real-time Monitoring**: Continuous tracking of air quality parameters including PM1, PM2.5, PM10, CO, NO<sub>2<sub>, O<sub>3<sub>, and VOCs.
+- **Real-time Monitoring**: Continuous tracking of air quality parameters including PM1, PM2.5, PM10, CO, NO<sub>2</sub>, O<sub>3</sub>, and VOCs.
 - **Cloud Integration**: Data is uploaded to Firebase for real-time storage and retrieval.
 - **User-friendly Interface**: Access air quality data on-the-go via a responsive web interface.
 - **Environmental Adaptability**: The sensor box is designed for outdoor use, powered by a solar panel with battery backup, ensuring consistent operation even in remote locations.
@@ -34,7 +34,7 @@ The system architecture involves several key components:
 ## Hardware Components
 - **PMS7003**: Particulate Matter Sensor (PM1, PM2.5, PM10)
  - <img width="175" alt="image" src="https://github.com/user-attachments/assets/b30c2d42-0589-4405-88ff-379d8ae266f9">
-- **MQ131**: Ozone Sensor (O<sub>3<sub>)
+- **MQ131**: Ozone Sensor (O<sub>3</sub>)
 - <img width="131" alt="image" src="https://github.com/user-attachments/assets/ca9790b7-b8f9-4277-9eb2-b329aaf20bf5">
 - **WaveShare BME688**: Measures temperature, humidity, gas resistance, and atmospheric pressure
 - <img width="131" alt="image" src="https://github.com/user-attachments/assets/29e67903-ab99-46fd-90e1-fa3f158f97b3">
@@ -42,7 +42,7 @@ The system architecture involves several key components:
 - <img width="131" alt="image" src="https://github.com/user-attachments/assets/dd9b786a-7217-4b5b-85d4-8ec1a4483a1f">
 - **DFRobot Fermion MEMS VOC Sensor**: Volatile Organic Compounds (VOC) Sensor
 - <img width="131" alt="image" src="https://github.com/user-attachments/assets/c6783ce9-ec12-4192-ad93-af66709ed871">
-- **DFRobot Fermion MEMS Gas Sensor - MiCS-2714**: Nitrogen Dioxide (NO<sub>2<sub>) Sensor
+- **DFRobot Fermion MEMS Gas Sensor - MiCS-2714**: Nitrogen Dioxide (NO<sub>2</sub>) Sensor
 - <img width="131" alt="image" src="https://github.com/user-attachments/assets/d1e2357f-d88b-4469-bffc-de663a6603b4">
 - **Robotdyn ATmega2560 + ESP8266**: Main microcontroller for data acquisition and Wi-Fi connectivity
 - <img width="175" alt="image" src="https://github.com/user-attachments/assets/91f46d03-6cd7-49ef-a840-4e2617cb27c5">
