@@ -66,10 +66,17 @@ The system architecture involves several key components:
    - Test the system for stable data transmission and sensor accuracy.
 
 ## How to Use
-1. Power on the sensor box by ensuring the solar panel and battery are connected.
-2. The sensor box will begin collecting and transmitting data to Firebase.
-3. Scan the QR code (included in the repository) to access the web interface.
-4. Monitor real-time air quality data, displayed in an easy-to-read format.
+1. **Run Arduino Code**: 
+   - Navigate to the [ARDUINO CODE](./ARDUINO%20CODE) folder.
+   - Open the `.ino` file in Arduino IDE.
+   - Upload the code to the ATmega2560 + ESP8266 board.
+2. **Set Up the Web Interface**:
+   - Go to the [Web Interface Code](./Web%20Interface%20Code) folder.
+   - Follow the instructions in the README file in that folder to deploy the web interface using Firebase.
+3. Power on the sensor box by ensuring the solar panel and battery are connected.
+4. The sensor box will begin collecting and transmitting data to Firebase.
+5. Scan the QR code (included in the repository) to access the web interface.
+6. Monitor real-time air quality data, displayed in an easy-to-read format.
 
 ## Results and Analysis
 - The system was deployed in various locations within East London, including Elizabeth Olympic Park.
@@ -87,4 +94,4 @@ The system architecture involves several key components:
 - **Long-term Deployment**: Testing the system’s durability in more diverse weather conditions.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+No license is associated with this project. Please contact the author for any questions regarding usage.
