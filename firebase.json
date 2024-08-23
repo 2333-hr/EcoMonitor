@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "sensordata",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
